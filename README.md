@@ -11,10 +11,10 @@
 [Repositório GitHub - Testlink](https://github.com/TestLinkOpenSourceTRMS/testlink-code)
 
 ### Sobre este projeto
-Este projeto permite executar uma instalação limpa e original do Testlink através de containers Docker. São utilizadas duas imagens para gerar os containers: **mariadb** e uma própria baseada na **webdevops/php-nginx:alpine-php7** (descrita pelo arquivo _[/testlink_web.dockerfile](https://github.com/alyssontkd/testlink-docker/testlink_web.dockerfile)_). Ambas podem ser encontradas no [Docker Hub](http://hub.docker.com).
+Este projeto permite executar uma instalação limpa e original do Testlink através de containers Docker. São utilizadas duas imagens para gerar os containers: **mariadb** e uma própria baseada na **webdevops/php-nginx:alpine-php7** (descrita pelo arquivo _[/testlink_web.dockerfile](https://github.com/alyssontkd/testlink-docker/blob/master/testlink_web.dockerfile)_). Ambas podem ser encontradas no [Docker Hub](http://hub.docker.com).
 
 ### Customizações no Testlink
-O Testlink deste projeto possui configurações personalizadas de e-mail e autenticação (via LDAP), definidas no arquivo [deps/custom_config.inc.php](https://github.com/alyssontkd/testlink-docker/deps/custom_config.inc.php).
+O Testlink deste projeto possui configurações personalizadas de e-mail e autenticação (via LDAP), definidas no arquivo [context/web/app/custom_config.inc.php](https://github.com/alyssontkd/testlink-docker/blob/master/context/web/app/custom_config.inc.php).
 
 Além disso, como o Testlink não permite o upload de imagens em várias das telas, foi incluído um gerenciador simples de arquivos com autenticação simples (usuário e senhas definidos (chaves `TL_FILES_*`) no arquivo `testlink_web.env`). Foram feitas alterações para limitar a funcionalidade do mesmo para permitir o upload de somente imagens e operações simples de arquivos e pastas.
 
@@ -23,7 +23,7 @@ Para acessar o gerenciador de arquivos, utilize a URL: `http://<servidor-testlin
 **Dica:** ao enviar a imagem, é possível se referir a ela através de URL absoluta, sendo necessário indicar somente o prefixo da pasta (normalmente, `files`): `/files/imagem_enviada.jpg`.
 
 ### Iniciando/parando os containers (serviços)
-Para facilitar a execução dos containers, é recomendado o uso do `docker-compose`. As configurações dos containers (**serviços** no contexto do Docker Compose) encontram-se no descritor _[/docker-compose.yml](https://github.com/alyssontkd/testlink-docker/docker-compose.yml)_.
+Para facilitar a execução dos containers, é recomendado o uso do `docker-compose`. As configurações dos containers (**serviços** no contexto do Docker Compose) encontram-se no descritor _[/docker-compose.yml](https://github.com/alyssontkd/testlink-docker/blob/master/docker-compose.yml)_.
 
 Os serviços que compoem o _stack_ são:
 - **web:** PHP e Nginx, expondo a porta 80;
