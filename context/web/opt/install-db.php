@@ -13,5 +13,5 @@ foreach (['tables', 'udf0', 'default_data'] as $migration) {
 $conn->exec("
   DELETE FROM users;
   INSERT INTO users (`login`, `password`, `role_id`, `email`, `first`, `last`, `locale`, `active`, `cookie_string`) 
-  VALUES ('${_SERVER['TL_ADMIN']}', '25d55ad283aa400af464c76d713c07ad',  8, '${_SERVER['TL_ADMIN_EMAIL']}',  'Testlink', 'Administrator',  'pt_BR', 1, CONCAT(MD5(RAND()), MD5('${_SERVER['TL_ADMIN']}')))
+  VALUES ('${_SERVER['TL_ADMIN']}', MD5('${_SERVER['TL_ADMIN_PASSWD']}'),  8, '${_SERVER['TL_ADMIN_EMAIL']}',  'Testlink', 'Administrator',  'pt_BR', 1, CONCAT(MD5(RAND()), MD5('${_SERVER['TL_ADMIN']}')))
 ");
