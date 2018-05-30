@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: testlink_web.dockerfile
+    env_file:
+      - testlink.env
+      - testlink_web.env
+    ports:
+      - '80:80'
+    volumes:
+      - web-files:/app/files
+      - web-logs:/var/testlink/logs
+      - web-uploads:/var/testlink/upload_area
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.2
+    env_file: testlink.env
+    volumes:
+      - db:/var/lib/mysql
+    ports:
+      - '3306:3306'
+
+volumes:
+  db:
+  web-logs:
+  web-files:
+  web-uploads:
