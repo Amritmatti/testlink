@@ -8,6 +8,7 @@ services:
     env_file:
       - testlink.env
       - testlink_web.env
+    container_name: 'dev-testlink'
     ports:
       - '80:80'
     volumes:
@@ -19,6 +20,7 @@ services:
 
   db:
     image: mariadb:10.2
+    container_name: 'database-mysql-testlink'
     env_file: testlink.env
     volumes:
       - db:/var/lib/mysql
