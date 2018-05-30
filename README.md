@@ -94,3 +94,6 @@ MYSQL_PASSWORD=***************
 MYSQL_ROOT_PASSWORD=***************
 ```
 **Obs:** a variável `MYSQL_HOST` deve apontar para o nome do serviço do banco de dados, definido no descritor do Docker Compose.
+**Obs2:** Para habilitar a autenticação via LDAP, descomente a linha `#$tlCfg->authentication['method'] = 'LDAP';` no arquivo`context/web/app/custom_config.inc.php` antes de compilar a imagem.
+
+***Dados de Acesso:** usuário `testlink` e senha `12345678`.
