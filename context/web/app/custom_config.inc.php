@@ -15,7 +15,7 @@ $g_return_path_email = $g_tl_admin_email;
 $g_SMTPAutoTLS = false;
 
 // LDAP
-$tlCfg->authentication['method'] = 'LDAP';
+#$tlCfg->authentication['method'] = 'LDAP'; #Descomente esta linha para autenticação LDAP. Quando comentada ela utiliza a autenticação padrao do Testlink
 $tlCfg->authentication['ldap'] = array();
 $tlCfg->authentication['ldap_automatic_user_creation'] = true;
 $tlCfg->authentication['ldap'][1]['ldap_server'] = $_SERVER['TL_LDAP_SERVER'];
