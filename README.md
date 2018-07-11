@@ -1,3 +1,43 @@
+### Pré-requisitos
+
+**A instalação padrão do GIT via repositório do Ubuntu/Debian consiste em um simples comando 'apt-get'**
+```
+$ sudo apt-get update
+$ sudo apt-get install git-core
+```
+**A instalação padrão do GIT via repositório do CentOS consiste em um simples comando 'yum'**
+```
+$ sudo apt-get install git -y
+```
+
+**Para testar a versão instalada digite o comando `git --version` e tera algo como a saída abaixo (Qualquer Distribuição)**
+```
+git version 1.8.3.1
+```
+## Sistema Operacional 
+**Para descobrir a versão do sistema operacional digite o comando**
+```
+# lsb_release -irc
+```
+ou 
+```
+# lsb_release -a
+```
+**O retorno será algo como o trecho abaixo:**
+```
+Distributor ID: Ubuntu
+Release:        18.04
+Codename:       bionic
+```
+**Caso não funcione, tente este outro comando**
+```
+# cat /etc/*-release | grep PRETTY
+```
+**O retorno será algo como o trecho abaixo:**
+```
+PRETTY_NAME="CentOS Linux 7 (Core)"
+```
+
 ### Conteúdo
 - [Sobre o Testlink](#sobre-o-testlink)
 - [Sobre este projeto](#sobre-este-projeto)
